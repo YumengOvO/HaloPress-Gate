@@ -1,0 +1,40 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+wp-config.php
+auth.json
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Codex/agent workspace metadata
+.codex/
+.agents/
+
+# Dependencies, caches, and generated output
+node_modules/
+vendor/
+.cache/
+coverage/
+dist/
+build/
+tmp/
+temp/
+*.log
+*.tmp
+
+# Local release archives
+*.zip
+*.tar
+*.tar.gz

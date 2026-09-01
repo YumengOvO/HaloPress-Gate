@@ -1,0 +1,186 @@
+:root {
+	--acg-background: #f5f2e9;
+	--acg-accent: #f595bb;
+	--acg-text: #fffdf8;
+}
+
+html.acg-active,
+html.acg-active body {
+	overflow: hidden !important;
+}
+
+.acg-gate[hidden] {
+	display: none !important;
+}
+
+.acg-gate {
+	position: fixed;
+	inset: 0;
+	z-index: 2147483000;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	isolation: isolate;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.acg-gate__base,
+.acg-gate__progress {
+	position: absolute;
+	inset: 0;
+	transform: scaleY(1);
+	will-change: transform;
+}
+
+.acg-gate__base {
+	z-index: -2;
+	background: var(--acg-background);
+	transform-origin: 50% 0;
+}
+
+.acg-gate__progress {
+	z-index: -1;
+	background: var(--acg-accent);
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+}
+
+.acg-gate__dialog {
+	width: min(680px, calc(100vw - 40px));
+	margin: 0;
+	padding: 42px 24px;
+	border: 0;
+	color: var(--acg-text);
+	text-align: center;
+	background: transparent;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(-20px);
+	transition: opacity 0.5s cubic-bezier(.22, 1, .36, 1), transform 0.5s cubic-bezier(.22, 1, .36, 1), visibility 0.5s;
+}
+
+.acg-gate.is-ready:not(.is-returning) .acg-gate__dialog {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+
+.acg-gate.is-confirming .acg-gate__dialog {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(20px);
+}
+
+.acg-gate__icon {
+	margin-bottom: 24px;
+}
+
+.acg-gate__icon img {
+	display: block;
+	width: 88px;
+	height: 88px;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.acg-gate__icon svg {
+	display: block;
+	margin: 0 auto;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2.5;
+	stroke-linecap: round;
+}
+
+.acg-gate__icon svg circle:last-child {
+	fill: currentColor;
+	stroke: none;
+}
+
+.acg-gate__title,
+.acg-gate__message {
+	margin: 0;
+	color: inherit;
+	letter-spacing: 0.08em;
+}
+
+.acg-gate__title {
+	font-size: clamp(18px, 2.8vw, 28px);
+	font-weight: 600;
+	line-height: 1.6;
+}
+
+.acg-gate__message {
+	margin-top: 6px;
+	font-size: clamp(15px, 2vw, 20px);
+	line-height: 1.7;
+}
+
+.acg-gate__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px 34px;
+	margin-top: 34px;
+}
+
+.acg-gate__button {
+	min-width: 168px;
+	padding: 12px 22px;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	color: inherit;
+	font: inherit;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	background: transparent;
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.acg-gate__button:hover,
+.acg-gate__button:focus-visible {
+	color: var(--acg-accent);
+	background: var(--acg-text);
+	outline: none;
+	transform: scale(1.05);
+}
+
+.acg-gate__button:focus-visible {
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--acg-text) 35%, transparent);
+}
+
+.acg-gate.is-exiting .acg-gate__progress {
+	transform: scaleY(0) !important;
+	transform-origin: 50% 0;
+	transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.acg-gate.is-exiting .acg-gate__base {
+	transform: scaleY(0);
+	transition: transform 0.5s cubic-bezier(.22, 1, .36, 1) 0.2s;
+}
+
+@media (max-width: 520px) {
+	.acg-gate__dialog {
+		padding-inline: 10px;
+	}
+
+	.acg-gate__actions {
+		gap: 12px;
+	}
+
+	.acg-gate__button {
+		width: min(290px, 100%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.acg-gate *,
+	.acg-gate *::before,
+	.acg-gate *::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		transition-delay: 0ms !important;
+	}
+}
