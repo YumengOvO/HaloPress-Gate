@@ -1,4 +1,4 @@
-=== Animated Content Gate ===
+=== HaloPress-Gate ===
 Tags: age gate, content warning, animation, adult content
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-Animated Content Gate 在网站正文上方显示全屏内容确认层。访客确认后，两层色块会依次收起并露出页面。
+HaloPress-Gate 在网站正文上方显示全屏内容确认层。访客确认后，两层色块会依次收起并露出页面。
 
 功能：
 
@@ -25,8 +25,8 @@ Animated Content Gate 在网站正文上方显示全屏内容确认层。访客�
 
 == Installation ==
 
-1. 将 `animated-content-gate` 文件夹上传到 `/wp-content/plugins/`。
-2. 在 WordPress 后台“插件”页面启用 Animated Content Gate。
+1. 将 `halopress-gate` 文件夹上传到 `/wp-content/plugins/`。
+2. 在 WordPress 后台“插件”页面启用 HaloPress-Gate。
 3. 打开“设置 → 内容确认动画”完成配置。
 
 == Frequently Asked Questions ==

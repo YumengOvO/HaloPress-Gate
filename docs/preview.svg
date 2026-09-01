@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="840" viewBox="0 0 1440 840" role="img" aria-labelledby="title desc">
+  <title id="title">HaloPress-Gate 内容确认界面</title>
+  <desc id="desc">粉色全屏内容确认层，中央包含提示图标、年龄确认文案和两个操作按钮。</desc>
+  <defs>
+    <linearGradient id="page-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf5"/>
+      <stop offset="1" stop-color="#f6eee6"/>
+    </linearGradient>
+    <linearGradient id="gate-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f79fc1"/>
+      <stop offset="1" stop-color="#ef83b0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#704055" flood-opacity=".20"/>
+    </filter>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#934765" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="840" rx="28" fill="url(#page-bg)"/>
+  <g opacity=".2" fill="#c5a998">
+    <rect x="92" y="106" width="210" height="18" rx="9"/>
+    <rect x="92" y="142" width="332" height="10" rx="5"/>
+    <rect x="1096" y="112" width="70" height="10" rx="5"/>
+    <rect x="1188" y="112" width="70" height="10" rx="5"/>
+    <rect x="1280" y="112" width="70" height="10" rx="5"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="54" y="48" width="1332" height="744" rx="22" fill="url(#gate-bg)"/>
+    <rect x="54" y="48" width="1332" height="744" rx="22" fill="none" stroke="#fff" stroke-opacity=".35"/>
+  </g>
+
+  <g fill="none" stroke="#fffdf8" stroke-width="4">
+    <circle cx="720" cy="268" r="52"/>
+    <path d="M720 240v40" stroke-linecap="round"/>
+  </g>
+  <circle cx="720" cy="296" r="3.6" fill="#fffdf8"/>
+
+  <g fill="#fffdf8" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif">
+    <text x="720" y="376" font-size="31" font-weight="700" letter-spacing="4">本网站包含仅限成人的内容。</text>
+    <text x="720" y="424" font-size="21" font-weight="400" letter-spacing="3" opacity=".95">您是否已满 18 周岁？</text>
+  </g>
+
+  <g filter="url(#soft-shadow)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <rect x="476" y="492" width="224" height="58" rx="29" fill="#fffdf8"/>
+    <text x="588" y="528" fill="#ef83b0">是，我已满 18 岁</text>
+  </g>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <rect x="740" y="492" width="224" height="58" rx="29" fill="none" stroke="#fffdf8" stroke-width="2"/>
+    <text x="852" y="528" fill="#fffdf8">否，离开网站</text>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#fffdf8" opacity=".72">
+    <text x="92" y="96" font-size="15" letter-spacing="2">HALOPRESS-GATE / PREVIEW</text>
+    <text x="1214" y="752" font-size="13" letter-spacing="1">v1.0.0</text>
+  </g>
+  <g transform="translate(92 724)">
+    <rect width="108" height="28" rx="14" fill="#f5f2e9"/>
+    <rect x="120" width="108" height="28" rx="14" fill="#f595bb"/>
+    <rect x="240" width="108" height="28" rx="14" fill="#fffdf8" fill-opacity=".95"/>
+  </g>
+</svg>

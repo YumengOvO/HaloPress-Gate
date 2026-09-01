@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Animated Content Gate
+ * Plugin Name: HaloPress-Gate
  * Description: 可配置的成人内容确认层与图片预加载开场动画。
  * Version:     1.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * License:     GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: animated-content-gate
+ * Text Domain: halopress-gate
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -187,10 +187,10 @@ final class ACG_Animated_Content_Gate {
 
 	public static function add_settings_page() {
 		add_options_page(
-			'Animated Content Gate',
+			'HaloPress-Gate',
 			'内容确认动画',
 			'manage_options',
-			'animated-content-gate',
+			'halopress-gate',
 			array( __CLASS__, 'render_settings_page' )
 		);
 	}
