@@ -8,6 +8,8 @@
 [![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-777bb4?logo=php&logoColor=white)](https://www.php.net/)
 [![GPLv3 or later](https://img.shields.io/badge/License-GPLv3%2B-4c1)](LICENSE)
 
+[作者：YumengOvO](https://github.com/YumengOvO) · [访问插件主页](https://github.com/YumengOvO/HaloPress-Gate)
+
 </div>
 
 ![HaloPress-Gate 内容确认界面效果图](docs/preview.svg)
@@ -45,7 +47,7 @@ HaloPress-Gate 会在网站内容出现前展示一个全屏确认界面。页�
 
 ### 使用 ZIP 安装
 
-1. 下载项目发布页中的 `halopress-gate.zip`。
+1. 从 [Releases](https://github.com/YumengOvO/HaloPress-Gate/releases) 下载最新的 `halopress-gate-x.y.z.zip`。
 2. 在 WordPress 后台打开“插件 → 安装插件 → 上传插件”。
 3. 上传 ZIP、完成安装并启用 **HaloPress-Gate**。
 4. 前往“设置 → 内容确认动画”进行配置。
@@ -118,7 +120,7 @@ window.addEventListener('acg:entered', function () {
 - PHP：7.4 或更高版本
 - JavaScript：原生浏览器 API，无运行时依赖
 - Cookie：`acg_age_confirmed=yes`
-- 版本：1.0.0
+- 版本：1.0.1
 
 ## 项目结构
 

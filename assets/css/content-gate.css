@@ -65,10 +65,11 @@ html.acg-active body {
 	transform: translateX(0);
 }
 
-.acg-gate.is-confirming .acg-gate__dialog {
+.acg-gate.is-ready.is-confirming .acg-gate__dialog {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateX(20px);
+	transition: none;
 }
 
 .acg-gate__icon {

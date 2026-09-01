@@ -40,8 +40,18 @@
 
 	yesButton.addEventListener('click', function () {
 		setConsentCookie();
+		yesButton.disabled = true;
+		noButton.disabled = true;
 		gate.classList.add('is-confirming');
-		window.setTimeout(beginExit, reducedMotion ? 0 : 500);
+
+		if (reducedMotion) {
+			beginExit();
+			return;
+		}
+
+		window.requestAnimationFrame(function () {
+			window.requestAnimationFrame(beginExit);
+		});
 	});
 
 	noButton.addEventListener('click', function () {

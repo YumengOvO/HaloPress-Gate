@@ -1,8 +1,9 @@
 === HaloPress-Gate ===
+Contributors: YumengOvO
 Tags: age gate, content warning, animation, adult content
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +43,12 @@ HaloPress-Gate 在网站正文上方显示全屏内容确认层。访客确认�
 监听 `acg:entered` 事件，或者使用添加到 `html` 和 `body` 的 `acg-entered` 类。
 
 == Changelog ==
+
+= 1.0.1 =
+
+* 确认后立即隐藏提示文字，再播放幕布退场动画。
+* 在插件列表加入“设置”入口。
+* 补充作者与插件主页信息。
 
 = 1.0.0 =
 

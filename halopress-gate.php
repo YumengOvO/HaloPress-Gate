@@ -1,8 +1,11 @@
 <?php
 /**
  * Plugin Name: HaloPress-Gate
+ * Plugin URI:  https://github.com/YumengOvO/HaloPress-Gate
  * Description: 可配置的成人内容确认层与图片预加载开场动画。
- * Version:     1.0.0
+ * Version:     1.0.1
+ * Author:      YumengOvO
+ * Author URI:  https://github.com/YumengOvO
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * License:     GPL-3.0-or-later
@@ -15,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 final class ACG_Animated_Content_Gate {
-	const VERSION     = '1.0.0';
+	const VERSION     = '1.0.1';
 	const OPTION_NAME = 'acg_settings';
 	const COOKIE_NAME = 'acg_age_confirmed';
 
@@ -24,6 +27,7 @@ final class ACG_Animated_Content_Gate {
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_settings_page' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( __CLASS__, 'plugin_action_links' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_assets' ) );
 		add_action( 'wp_head', array( __CLASS__, 'print_early_boot_script' ), 1 );
 		add_action( 'wp_body_open', array( __CLASS__, 'render_gate' ), 1 );
@@ -193,6 +197,14 @@ final class ACG_Animated_Content_Gate {
 			'halopress-gate',
 			array( __CLASS__, 'render_settings_page' )
 		);
+	}
+
+	public static function plugin_action_links( $links ) {
+		$settings_url  = admin_url( 'options-general.php?page=halopress-gate' );
+		$settings_link = '<a href="' . esc_url( $settings_url ) . '">设置</a>';
+
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 
 	public static function register_settings() {
