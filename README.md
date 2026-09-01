@@ -27,3 +27,7 @@ window.addEventListener('acg:entered', function () {
 ```
 
 插件未包含或复制目标网站的图像、字体、角色素材或代码库。
+
+## 许可证
+
+本项目使用 [GNU General Public License v3.0 or later](LICENSE) 发布。
